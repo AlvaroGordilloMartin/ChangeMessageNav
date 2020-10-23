@@ -77,10 +77,7 @@ public class SendMessageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
 
-        btSendMessage=view.findViewById(R.id.btSendMessage);
-        edMessage=view.findViewById(R.id.edMessage);
-        skSize=view.findViewById(R.id.skSize);
-        btAbout=view.findViewById(R.id.btAbout);
+
         return view;
 
 
@@ -90,6 +87,10 @@ public class SendMessageFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        btSendMessage=view.findViewById(R.id.btSendMessage);
+        edMessage=view.findViewById(R.id.edMessage);
+        skSize=view.findViewById(R.id.skSize);
+        btAbout=view.findViewById(R.id.btAbout);
         Toast.makeText(getActivity(),"Numero Generado:"+number,Toast.LENGTH_SHORT).show();
         btSendMessage.setOnClickListener(new View.OnClickListener() {
 
