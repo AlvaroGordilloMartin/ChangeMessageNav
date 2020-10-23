@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/sendMessageFragment">
 
+    <fragment
+        android:id="@+id/sendMessageFragment"
+        android:name="com.example.changemessagenavigation.ui.SendMessageFragment"
+        android:label="SendMessageFragment"
+        tools:layout="@layout/fragment_send_message">
+        <action
+            android:id="@+id/action_sendMessageFragment_to_viewMessageFragment"
+            app:destination="@id/viewMessageFragment" />
+        <action
+            android:id="@+id/action_sendMessageFragment_to_aboutActivity"
+            app:destination="@id/aboutActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMessageFragment"
+        android:name="com.example.changemessagenavigation.ui.ViewMessageFragment"
+        android:label="ViewMessageFragment"
+        tools:layout="@layout/fragment_view_message">
+        <argument
+            android:name="message"
+            app:argType="com.example.changemessagenavigation.model.Message" />
+    </fragment>
+    <activity
+        android:id="@+id/aboutActivity"
+        android:name="com.example.changemessagenavigation.ui.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/activity_about" />
 </navigation>

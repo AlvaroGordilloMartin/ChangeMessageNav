@@ -55,6 +55,8 @@ public class ViewMessageFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         tvMessage=view.findViewById(R.id.tvMessage);
         Bundle bundle = getArguments();
+        //EJEMPLO 1: REcibe los argumentos a traves del bundle
+        /*
         //Tenemos que comprobar si el objeto tiene valores
         if(bundle!=null){
             //Actualizamos el texto y el tamaño
@@ -62,6 +64,12 @@ public class ViewMessageFragment extends Fragment {
             tvMessage.setText(mesage.getMessage());
             tvMessage.setTextSize(mesage.getSize());
         }
+
+         */
+        //Message message = ViewMessageFramentArgs.fromBundle(getArguments()).getMessage();
+        Message message = ViewMessageFragmentArgs.fromBundle(bundle).getMessage();
+        tvMessage.setText(message.getMessage());
+        tvMessage.setTextSize(message.getSize());
     }
 
     @Override
